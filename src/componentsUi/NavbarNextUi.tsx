@@ -85,6 +85,18 @@ export default function App() {
             Different
           </Link>
         </NavbarItem>
+        <NavbarItem>
+          <Link
+            className={`  pe-5 ${
+              pathname === "/AosChildren"
+                ? "font-bold text-red-500"
+                : "text-black dark:text-white"
+            }`}
+            href="/AosChildren"
+          >
+            AosChildren
+          </Link>
+        </NavbarItem>
       </NavbarContent>
       <NavbarContent justify="end">
         <NavbarItem className="hidden items-center gap-5 sm:flex">

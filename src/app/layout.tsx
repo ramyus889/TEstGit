@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import { Mooli } from "next/font/google";
+import NavbarNextUi from "../componentsUi/NavbarNextUi";
 import "./globals.css";
+import { Providers } from "./providers";
 import "/css/fontStyle.css";
 import "/css/Uiverse.css";
-import NavbarNextUi from "../componentsUi/NavbarNextUi";
-import { Providers } from "./providers";
+import UserAos from "./AosChildren/UserAos";
 
 const fontStyle = Mooli({ subsets: ["latin"], weight: "400" });
 
@@ -23,8 +24,10 @@ export default function RootLayout({
       <body className={fontStyle.className}>
         <Providers>
           <div className="">
-            <NavbarNextUi />
-            {children}
+            <UserAos>
+              <NavbarNextUi />
+              {children}
+            </UserAos>
           </div>
         </Providers>
       </body>
