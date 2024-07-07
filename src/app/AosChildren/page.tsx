@@ -224,14 +224,13 @@ export default function About() {
         <div className="flex flex-col gap-[600px] text-center">
           {fadeAOS.map((fade) => (
             <div
-              suppressHydrationWarning={true}
               key={fade.id}
               data-aos={fade.dataAos}
               data-aos-offset={fade.offset}
               data-aos-easing={fade.easy}
               data-aos-duration={fade.duration}
               data-aos-anchor-placement={fade.placement}
-              className="rounded-xl border-2 border-[#31f6ac] px-8 py-4"
+              className="aos-init aos-animate rounded-xl border-2 border-[#31f6ac] px-8 py-4"
             >
               {fade.name}
             </div>
