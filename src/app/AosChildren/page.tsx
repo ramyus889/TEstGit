@@ -1,5 +1,3 @@
-"use client";
-
 export default function About() {
   const fadeAOS = [
     {
@@ -15,7 +13,7 @@ export default function About() {
       duration: 1000,
     },
     {
-      id: 75,
+      id: 752,
       name: "Fade-right",
       dataAos: "fade-right",
       duration: 1000,
@@ -81,7 +79,7 @@ export default function About() {
       duration: 1000,
     },
     {
-      id: 11,
+      id: 1133,
       name: "Zoom-in-up",
       dataAos: "zoom-in-up",
       duration: 1000,
@@ -99,7 +97,7 @@ export default function About() {
       duration: 1000,
     },
     {
-      id: 42,
+      id: 420,
       name: "Zoom-in-right",
       dataAos: "zoom-in-right",
       duration: 1000,
@@ -193,28 +191,28 @@ export default function About() {
       duration: 1000,
     },
     {
-      id: 1,
+      id: 180,
       name: "Fade-up",
       dataAos: "fade-up",
       placement: "bottom-bottom",
       duration: 1000,
     },
     {
-      id: 1,
+      id: 137,
       name: "Fade-up",
       dataAos: "fade-up",
       placement: "top-center",
       duration: 1000,
     },
     {
-      id: 1,
+      id: 1807,
       name: "Fade-up",
       dataAos: "fade-up",
       placement: "center-center",
       duration: 1000,
     },
     {
-      id: 1,
+      id: 163,
       name: "Fade-up",
       dataAos: "fade-up",
       duration: 1000,
@@ -226,6 +224,7 @@ export default function About() {
         <div className="flex flex-col gap-[600px] text-center">
           {fadeAOS.map((fade) => (
             <div
+              suppressHydrationWarning={true}
               key={fade.id}
               data-aos={fade.dataAos}
               data-aos-offset={fade.offset}
