@@ -226,11 +226,12 @@ export default function About() {
             <div
               key={fade.id}
               data-aos={fade.dataAos}
-              data-aos-offset={fade.offset}
+              suppressHydrationWarning
               data-aos-easing={fade.easy}
+              data-aos-offset={fade.offset}
               data-aos-duration={fade.duration}
               data-aos-anchor-placement={fade.placement}
-              className="aos-init aos-animate rounded-xl border-2 border-[#31f6ac] px-8 py-4"
+              className=" rounded-xl border-2 border-[#31f6ac] px-8 py-4"
             >
               {fade.name}
             </div>
