@@ -97,6 +97,30 @@ export default function App() {
             AosChildren
           </Link>
         </NavbarItem>
+        <NavbarItem>
+          <Link
+            className={`  pe-5 ${
+              pathname === "/practice"
+                ? "font-bold text-red-500"
+                : "text-black dark:text-white"
+            }`}
+            href="/practice"
+          >
+            practice
+          </Link>
+        </NavbarItem>
+        <NavbarItem>
+          <Link
+            className={`  pe-5 ${
+              pathname === "/Chart"
+                ? "font-bold text-red-500"
+                : "text-black dark:text-white"
+            }`}
+            href="/Chart"
+          >
+            Chart
+          </Link>
+        </NavbarItem>
       </NavbarContent>
       <NavbarContent justify="end">
         <NavbarItem className="hidden items-center gap-5 sm:flex">
