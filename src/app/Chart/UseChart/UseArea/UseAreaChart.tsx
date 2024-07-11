@@ -1,29 +1,27 @@
 "use client";
 
-import { TrendingUp } from "lucide-react";
-import { Area, AreaChart, CartesianGrid, XAxis } from "recharts";
+import { Area, AreaChart, CartesianGrid } from "recharts";
 
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
 import {
   ChartConfig,
   ChartContainer,
   ChartTooltip,
   ChartTooltipContent,
 } from "@/components/ui/chart";
+
 const chartData = [
-  { month: "January", desktop: 186, mobile: 80 },
-  { month: "February", desktop: 305, mobile: 200 },
-  { month: "March", desktop: 237, mobile: 120 },
-  { month: "April", desktop: 73, mobile: 190 },
-  { month: "May", desktop: 209, mobile: 130 },
-  { month: "June", desktop: 214, mobile: 140 },
+  { month: "January", web: 600, desktop: 300, mobile: 420 },
+  { month: "February", web: 300, desktop: 200, mobile: 600 },
+  { month: "March", web: 800, desktop: 300, mobile: 150 },
+  { month: "April", web: 500, desktop: 100, mobile: 300 },
+  { month: "May", web: 100, desktop: 700, mobile: 450 },
+  { month: "June", web: 700, desktop: 600, mobile: 300 },
+  { month: "Jule", web: 800, desktop: 300, mobile: 150 },
+  { month: "August", web: 100, desktop: 500, mobile: 400 },
+  { month: "September", web: 300, desktop: 100, mobile: 450 },
+  { month: "October", web: 600, desktop: 400, mobile: 100 },
+  { month: "November", web: 300, desktop: 600, mobile: 450 },
+  { month: "December", web: 700, desktop: 500, mobile: 700 },
 ];
 
 const chartConfig = {
@@ -35,41 +33,72 @@ const chartConfig = {
     label: "Mobile",
     color: "hsl(var(--chart-2))",
   },
+  web: {
+    label: "Web",
+    color: "hsl(var(--chart-3))",
+  },
 } satisfies ChartConfig;
 
 export default function Component() {
   return (
-    <Card>
-      <CardHeader>
-        <CardTitle>Area Chart - Stacked</CardTitle>
-        <CardDescription>
-          Showing total visitors for the last 6 months
-        </CardDescription>
-      </CardHeader>
-      <CardContent>
-        <ChartContainer config={chartConfig}>
-          <AreaChart
-            accessibilityLayer
-            data={chartData}
-            margin={{
-              left: 12,
-              right: 12,
-            }}
-          >
-            <CartesianGrid vertical={false} />
-            <XAxis
-              dataKey="month"
-              tickLine={false}
-              axisLine={false}
-              tickMargin={8}
-              tickFormatter={(value) => value.slice(0, 3)}
+    <ChartContainer config={chartConfig}>
+      <AreaChart
+        accessibilityLayer
+        data={chartData}
+        margin={{
+          left: 12,
+          right: 12,
+        }}
+      >
+        <CartesianGrid vertical={false} horizontal={false} />
+        {/* <XAxis
+          dataKey="month"
+          tickLine={false}
+          axisLine={false}
+          tickMargin={6}
+          tickFormatter={(value) => value.slice(0, 3)}
+        /> */}
+        <ChartTooltip
+          cursor={false}
+          content={<ChartTooltipContent indicator="dot" />}
+        />
+        <defs>
+          <linearGradient id="fillDesktop" x1="0" y1="0" x2="0" y2="1">
+            <stop
+              offset="5%"
+              stopColor="var(--color-desktop)"
+              stopOpacity={0.8}
             />
-            <ChartTooltip
-              cursor={false}
-              content={<ChartTooltipContent indicator="dot" />}
+            <stop
+              offset="95%"
+              stopColor="var(--color-desktop)"
+              stopOpacity={0.1}
             />
+          </linearGradient>
+          <linearGradient id="fillMobile" x1="0" y1="0" x2="0" y2="1">
+            <stop
+              offset="5%"
+              stopColor="var(--color-mobile)"
+              stopOpacity={0.8}
+            />
+            <stop
+              offset="95%"
+              stopColor="var(--color-mobile)"
+              stopOpacity={0.1}
+            />
+          </linearGradient>
+        </defs>
+        <Area
+          dataKey="mobile"
+          type="natural"
+          fill="url(#fillDesktop)"
+          fillOpacity={0.4}
+          stroke="var(--color-desktop)"
+          stackId="a"
+        />
+        {/*
             <Area
-              dataKey="mobile"
+              dataKey="desktop"
               type="natural"
               fill="var(--color-mobile)"
               fillOpacity={0.4}
@@ -77,28 +106,15 @@ export default function Component() {
               stackId="a"
             />
             <Area
-              dataKey="desktop"
+              dataKey="web"
               type="natural"
-              fill="var(--color-desktop)"
+              fill="var(--color-web)"
               fillOpacity={0.4}
-              stroke="var(--color-desktop)"
+              stroke="var(--color-web)"
               stackId="a"
-            />
-          </AreaChart>
-        </ChartContainer>
-      </CardContent>
-      <CardFooter>
-        <div className="flex w-full items-start gap-2 text-sm">
-          <div className="grid gap-2">
-            <div className="flex items-center gap-2 font-medium leading-none">
-              Trending up by 5.2% this month <TrendingUp className="h-4 w-4" />
-            </div>
-            <div className="flex items-center gap-2 leading-none text-muted-foreground">
-              January - June 2024
-            </div>
-          </div>
-        </div>
-      </CardFooter>
-    </Card>
+            /> 
+            */}
+      </AreaChart>
+    </ChartContainer>
   );
 }

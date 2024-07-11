@@ -33,6 +33,12 @@ export default function App() {
     "Log Out",
   ];
 
+  const userclasstrue = [
+    "rounded-[50px] bg-white px-4 py-5 font-bold text-black",
+  ];
+
+  const userclassfalse = ["text-black dark:text-white"];
+
   return (
     <Navbar onMenuOpenChange={setIsMenuOpen} maxWidth="full">
       <NavbarContent>
@@ -47,13 +53,14 @@ export default function App() {
           </Link>
         </NavbarBrand>
       </NavbarContent>
-      <NavbarContent className="hidden gap-4 lg:flex" justify="center">
+      <NavbarContent
+        className="mt-3 hidden gap-4 rounded-[50px] border-1 border-white  lg:flex"
+        justify="center"
+      >
         <NavbarItem>
           <Link
-            className={`  pe-5 ${
-              pathname === "/"
-                ? "font-bold text-red-500"
-                : "text-black dark:text-white"
+            className={` pe-5 ps-5 ${
+              pathname === "/" ? userclasstrue : userclassfalse
             }`}
             href="/"
           >
@@ -62,10 +69,8 @@ export default function App() {
         </NavbarItem>
         <NavbarItem>
           <Link
-            className={`  pe-5 ${
-              pathname === "/useComponents"
-                ? "font-bold text-red-500"
-                : "text-black dark:text-white"
+            className={` pe-5 ${
+              pathname === "/useComponents" ? userclasstrue : userclassfalse
             }`}
             href="/useComponents"
           >
@@ -75,10 +80,8 @@ export default function App() {
 
         <NavbarItem>
           <Link
-            className={`  pe-5 ${
-              pathname === "/Different"
-                ? "font-bold text-red-500"
-                : "text-black dark:text-white"
+            className={` pe-5 ${
+              pathname === "/Different" ? userclasstrue : userclassfalse
             }`}
             href="/Different"
           >
@@ -87,10 +90,8 @@ export default function App() {
         </NavbarItem>
         <NavbarItem>
           <Link
-            className={`  pe-5 ${
-              pathname === "/AosChildren"
-                ? "font-bold text-red-500"
-                : "text-black dark:text-white"
+            className={` pe-5 ${
+              pathname === "/AosChildren" ? userclasstrue : userclassfalse
             }`}
             href="/AosChildren"
           >
@@ -99,10 +100,8 @@ export default function App() {
         </NavbarItem>
         <NavbarItem>
           <Link
-            className={`  pe-5 ${
-              pathname === "/practice"
-                ? "font-bold text-red-500"
-                : "text-black dark:text-white"
+            className={` pe-5 ${
+              pathname === "/practice" ? userclasstrue : userclassfalse
             }`}
             href="/practice"
           >
@@ -111,14 +110,22 @@ export default function App() {
         </NavbarItem>
         <NavbarItem>
           <Link
-            className={`  pe-5 ${
-              pathname === "/Chart"
-                ? "font-bold text-red-500"
-                : "text-black dark:text-white"
+            className={` pe-5 ${
+              pathname === "/Chart" ? userclasstrue : userclassfalse
             }`}
             href="/Chart"
           >
             Chart
+          </Link>
+        </NavbarItem>
+        <NavbarItem>
+          <Link
+            className={` pe-5 ${
+              pathname === "/Lukacho" ? userclasstrue : userclassfalse
+            }`}
+            href="/Lukacho"
+          >
+            Lukacho
           </Link>
         </NavbarItem>
       </NavbarContent>

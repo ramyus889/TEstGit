@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import { Mooli } from "next/font/google";
 import NavbarNextUi from "../componentsUi/NavbarNextUi";
+import UserAos from "./AosChildren/UserAos";
 import "./globals.css";
 import { Providers } from "./providers";
 import "/css/fontStyle.css";
 import "/css/Uiverse.css";
-import UserAos from "./AosChildren/UserAos";
 
 const fontStyle = Mooli({ subsets: ["latin"], weight: "400" });
 
