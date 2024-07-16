@@ -1,8 +1,8 @@
 import { Skeleton } from "@nextui-org/react";
 import { Suspense } from "react";
 
-import ProdCom from "./(components)/components/ProdCom";
-import ResizeCom from "./(components)/components/ResizeCom";
+import ProdCom from "./(useComponents)/(components)/components/ProdCom";
+import ResizeCom from "./(useComponents)/(components)/components/ResizeCom";
 
 export default function About() {
   return (

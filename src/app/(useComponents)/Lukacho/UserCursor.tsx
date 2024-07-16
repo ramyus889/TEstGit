@@ -11,7 +11,7 @@ export const Example = () => (
     }
   >
     <div className="flex h-full w-full flex-col justify-center px-4 text-start sm:items-center sm:text-center">
-      <div className="text-6xl font-bold">Users Love Interactions.</div>
+      <div className="text-6xl font-bold">Users Interactions.</div>
       <div className="text-lg text-neutral-400">
         Hover over the illustration and you gonna see
       </div>

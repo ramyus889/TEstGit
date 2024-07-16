@@ -1,6 +1,6 @@
 "use client";
 
-import UserTime from "@/app/(components)/components/UserTime";
+import UserTime from "@/app/(useComponents)/(components)/components/UserTime";
 import {
   Link,
   Navbar,
@@ -13,7 +13,7 @@ import {
 } from "@nextui-org/react";
 import { usePathname } from "next/navigation";
 import React from "react";
-import ThemeSwitcher from "./../app/(components)/components/ThemeSwitcher";
+import ThemeSwitcher from "./../app/(useComponents)/(components)/components/ThemeSwitcher";
 import { AcmeLogo } from "./AcmeLogo.jsx";
 
 export default function App() {
@@ -126,6 +126,26 @@ export default function App() {
             href="/Lukacho"
           >
             Lukacho
+          </Link>
+        </NavbarItem>
+        <NavbarItem>
+          <Link
+            className={` pe-5 ${
+              pathname === "/Redux" ? userclasstrue : userclassfalse
+            }`}
+            href="/Redux"
+          >
+            Redux
+          </Link>
+        </NavbarItem>
+        <NavbarItem>
+          <Link
+            className={` pe-5 ${
+              pathname === "/ReactQ" ? userclasstrue : userclassfalse
+            }`}
+            href="/ReactQ"
+          >
+            ReactQ
           </Link>
         </NavbarItem>
       </NavbarContent>
