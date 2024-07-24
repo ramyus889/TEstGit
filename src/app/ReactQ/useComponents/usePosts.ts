@@ -1,7 +1,11 @@
 import { useQuery } from "@tanstack/react-query";
+import axios from "axios";
 import { useEffect } from "react";
-import { postService } from "../post.service";
 import { IPost } from "../post.types";
+
+const getData = async () => {
+  return axios.get<IPost[]>("https://jsonplaceholder.typicode.com/posts");
+};
 
 const initialData: {
   data: IPost[];
@@ -19,7 +23,7 @@ const initialData: {
 export default function usePosts(isEnabled: boolean) {
   const { data, isError, isSuccess, isLoading } = useQuery({
     queryKey: ["todos"],
-    queryFn: postService.getPosts,
+    queryFn: getData,
     select: (data) => data.data,
     enabled: isEnabled,
     initialData,

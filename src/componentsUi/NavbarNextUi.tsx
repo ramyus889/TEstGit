@@ -131,16 +131,6 @@ export default function App() {
         <NavbarItem>
           <Link
             className={` pe-5 ${
-              pathname === "/Redux" ? userclasstrue : userclassfalse
-            }`}
-            href="/Redux"
-          >
-            Redux
-          </Link>
-        </NavbarItem>
-        <NavbarItem>
-          <Link
-            className={` pe-5 ${
               pathname === "/ReactQ" ? userclasstrue : userclassfalse
             }`}
             href="/ReactQ"
