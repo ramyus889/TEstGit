@@ -12,7 +12,7 @@ import { FiPlus, FiTrash } from "react-icons/fi";
 
 export const CustomKanban = () => {
   return (
-    <div className=" w-full  text-neutral-50">
+    <div className="w-full text-neutral-50">
       <Board />
     </div>
   );
