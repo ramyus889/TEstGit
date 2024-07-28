@@ -28,7 +28,7 @@ const Board = () => {
       <Column
         title="Frontend"
         column="frontend"
-        headingColor="text-white"
+        headingColor="text-[#16af20]"
         cards={cards}
         setCards={setCards}
       />
